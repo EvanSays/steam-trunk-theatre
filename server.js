@@ -1,7 +1,7 @@
-let PythonShell = require('python-shell');
-let kill = require('tree-kill');
-express = require('express'); //web server
-app = express();
+let PythonShell = require('python-shell'); // to run python scripts
+let kill = require('tree-kill'); // kills pid processes
+const express = require('express'); //web server
+const app = express();
 var childPid = null;
 
 app.listen(8080, function () { //start the webserver on port 8080
@@ -24,5 +24,5 @@ app.get('/start/:fileName', function(req, res) {
     console.log('finished');
   });
   childPid = shell.childProcess.pid
-  console.log("open: ", childPid);
+  console.log("start# ", childPid);
 });
