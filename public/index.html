@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<head>
+ <title>Steam Trunk Theatre</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+ <link href="style.css" rel="stylesheet"> <!--link to css sheet-->
+</head>
+
+<head>
+  <meta charset="utf-8">
+  <title>Elementary Lessons</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+  </head>
+<body>
+<h1>STEAM Trunk Lesson Directory</h1>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4">  
+      <h2>Kindergarten</h2>
+        <button class="btn Halloween btn-default">
+          Halloween Pumpkin <!--the button links to the java in main.js that displays the 
+            other buttons that run the scripts-->
+        </button>
+        <br>
+        <button class="btn Hologram btn-default" >
+          Hologram Shapes
+        </button>
+      </div> 
+      <div class="col-sm-4">   
+        <h2>Grade 1</h2>
+        <button class="btn SunMotion btn-default" >
+          Motion of the Sun
+        </button>
+        <br>
+        <button class="btn Stories btn-default" >
+          Stories
+        </button>
+      </div>
+      <div class="col-sm-4">  
+        <h2>Grade 2</h2>
+        <button class="btn Compound btn-default" >
+          Compound Words
+        </button>
+        <br>
+        <button class="btn LightVsPig btn-default" >
+          Lights vs. Pigment
+        </button>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-sm-4">  
+        <h2>Grade 3</h2>
+            <button class="btn Geometry btn-default" >
+              Geometry Robots
+            </button>
+            <br>
+            <button class="btn Weather btn-default" >
+                Weather
+            </button>
+      </div>      
+      <div class="col-sm-4">  
+        <h2>Grade 4</h2>
+            <button class="btn Biomes btn-default" >
+                Biomes and Nature
+            </button>
+            <br>
+            <button class="btn Music btn-default" >
+                Musical Scale
+            </button>
+      </div>      
+      <div class="col-sm-4">  
+        <h2>Grade 5</h2>
+            <button class="btn Constellations btn-default" >
+                Constellations
+            </button>
+            <br>
+            <button class="btn btn-default" >
+                Intro to Programming
+            </button>
+      </div>  
+    </div>
+    <!--this below is a container for the jquery that
+      calls this so I don't have to type the solid.py a bunch-->
+    <span class="invisible">
+    <div  class="container-fluid solid">
+      <label class="switch">
+        <div class="row">
+         <input id="check12" type="hidden">
+           <div class="col-sm-12"><button class="btn btn-danger" id="check12 script1" onclick="check12()" data-fileName="red.py">Red</button></div>
+         <input id="check13" type="hidden">   
+            <div class="col-sm-12"><button class="btn btn-success" id="check13 script1" onclick="check13()" data-fileName="green.py">Green</button></div>
+         <input id="check14" type="hidden">   
+            <div class="col-sm-12"><button class="btn btn-primary" id"check14 script1" onclick="check14()" data-fileName="blue.py">Blue</button></div>  
+        </div>
+        <div class="row">
+         <input id="check15" type="hidden">
+           <div class="col-sm-12"><button class="btn btn-info" id="check15 script1" onclick="check15()" data-fileName="cyan.py">Cyan</button></div>
+         <input id="check16" type="hidden">    
+           <div class="col-sm-12"><button class="btn btn-warning" id="check16 script1" onclick="check16()" data-fileName="yellow">Yellow</button></div>
+         <input id="check17" type="hidden">  
+           <div class="col-sm-12"><button class="btn btn-magenta" id="check17 script1" onclick="check17()" data-fileName="magenta.py">Magenta</button></div> 
+        </div>
+      </label>
+    </div> 
+    </span>
+  <div class="toggle invisible" id="Halloween">
+    <br>
+    <p>
+      Click to run "Fire.py"
+    </p><a href="https://drive.google.com/open?id=1M0veLXVgwg139bNDXDsN6uvRlnIfV2K9">Lesson PDF </a>
+    </p><!--the above links to the pdf of the lesson-->
+    <label class="switch">
+      <!--<div id="check1">-->
+      <input id="check1" type="hidden">
+      <article><!-- the id check 1 is what links to the appropriate button to be displayed by the main js-->
+        <button class="btn btn-default" id="check1" onclick="check1()" id="script1" data-fileName="fire.py">Candle Light</button>
+      </article>
+      <!--id script 1 is something for the server.js and the file name is how the js knows what to run-->
+    </label>
+  </div>
+  <br>
+  <div class="toggle invisible" id="Hologram">
+    <br>
+    <p>
+      Toggle the switch to run the Hologram program
+    </p>
+    <div class="insert-solid"></div>
+    <script>
+      $(document).ready(function(){
+        $(".solid").clone.append(".insert-solid");
+      });
+    </script>
+  </div>
+  <br>
+  <div class="toggle invisible" id="SunMotion">
+    <br>
+    <p>
+      Toggle the switch to run "24HourCycle.py"
+    </p>
+    <label class="switch">
+      <input id="check3" type="hidden">
+      <article>
+        <button class="btn btn-default" id="check3" id="script1" onclick="check3()" data-fileName="24HourCycle.py">24 Hour Cycle</button>
+      </article>
+    </label>
+  </div>
+  <div class="toggle invisible" id="Stories">
+    <br>
+    <p>
+      Click to run "dayMode.py"
+    </p>
+    <label class="switch">
+      <input id="check4" type="hidden">
+      <article>
+        <button class="btn btn-default" id="check4" id="script1" onclick="check4()" data-fileName="dayMode.py">Day Mode</button>
+      </article>
+    </label>
+    <p>
+      Click to run "nightMode.py"
+    </p>
+    <label class="switch">
+      <input id="check5" type="hidden">
+      <article>
+        <button class="btn btn-default" id="check5" id="script1" onclick="check5()" data-fileName="eveningMode.py">Evening Mode</button>
+      </article>
+    </label>
+  </div>
+  <div class="toggle invisible" id="Compound">
+    <br>
+    <p>
+      Click to run "solid.py"
+    </p>
+    <div class="insert-solid"></div>
+    <script>
+      $(document).ready(function(){
+        $(".solid").clone.append(".insert-solid");
+      });
+    </script>
+  </div>
+  <div class="toggle invisible" id="LightVsPig">
+    <br>
+    <p>
+      Click to run a solid color.
+    </p>
+    <div class="insert-solid"></div>
+    <script>
+      $(document).ready(function(){
+        $(".solid").appendTo(".insert-solid");
+      });
+    </script>
+    </div>
+  </div>
+  <div class="toggle invisible" id="Geometry">
+    <br>
+    <p>
+      Click to run "solid.py"
+    </p>
+    <div class="insert-solid"></div>
+    <script>
+      $(document).ready(function(){
+        $(".solid").clone.append(".insert-solid");
+      });
+    </script>
+  </div>
+  <div class="toggle invisible" id="Weather">
+    <br>
+      <p>
+        Click to run "sunny.py"
+      </p>
+      <label class="switch">
+        <input id="check7" type="hidden">
+        <article>
+          <button class="btn btn-default" id="check7 script1" onclick="check7()" data-fileName="sunny.py">Sunny</button>
+        </article>
+        <input id="check8" type="hidden">
+        <article>
+          <button class="btn btn-default" id="check8 script1" onclick="check8()" data-fileName="rain.py">Rain</button>
+        </article>
+        <input id="check9" type="hidden">
+        <article>
+          <button class="btn btn-default" id="check9 script1" onclick="check9()" data-fileName="snow.py">Snow</button>
+        </article>
+        <input id="check10" type="hidden">
+        <article>
+          <button class="btn btn-default" id="check10 script1" onclick="check10()" data-fileName="partlyCloudy.py">Partly Cloudy</button>
+        </article>
+      </label>
+  </div>
+  <div class="toggle invisible" id="Biomes">
+    <br>
+    <label class="switch">
+      <input id="check7" type="hidden">
+      <article>
+        <button class="btn btn-default" id="check7 script1" data-fileName="sunny.py">Sunny</button>
+      </article>
+      <input id="check8" type="hidden">
+      <article>
+        <button class="btn btn-default" id="check8 script1" data-fileName="rain.py">Rain</button>
+      </article>
+      <input id="check9" type="hidden">
+      <article>
+        <button class="btn btn-default" id="check9 script1" data-fileName="snow.py">Snow</button>
+      </article>
+      <input id="check10" type="hidden">
+      <article>
+        <button class="btn btn-default" id="check10 script1" data-fileName="partlyCloudy.py">Partly Cloudy</button>
+      </article>
+    </label>
+  </div>
+  <div class="toggle invisible" id="Music">
+    <br>
+    <p>
+      Click to run "solid.py"
+    </p>
+    <div class="insert-solid"></div>
+    <script>
+      $(document).ready(function(){
+        $(".solid").clone.append(".insert-solid");
+      });
+    </script>
+  </div>
+  <div class="toggle invisible" id="Constellations">
+    <br>
+    <p>
+      Click to run "star.py"
+    </p>
+    <label class="switch">
+      <input id="check9" type="hidden">
+      <article>
+        <button class="btn btn-default" id="script1" data-fileName="snow.py">StarLight</button>
+      </article>
+    </label>
+  </div>
+  <div class="toggle invisible" id="Programming">
+    <br>
+    <p>
+      Make your own
+    </p>
+    <label class="switch">
+      <input id="check11" type="hidden">
+    </label>
+  </div>
+</body>
+ <!--
+   <article>
+     <button id="script1" data-fileName="24HourCycle.py">24 Hour Cycle</button>
+   </article>
+   <article>
+     <button id="script2" data-filename="dayCycle.py">Day Cycle</button>
+   </article>
+   <article>
+     <button id="script3" data-filename="dayMode.py">Day Mode</button>
+   </article>
+   <article>
+     <button id="script4" data-filename="eveningMode.py">Evening Cycle</button>
+   </article> -->
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./main.js" type="text/javascript"></script>
+
+</html>
+
